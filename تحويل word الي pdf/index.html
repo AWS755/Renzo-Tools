@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta
+    name="description"
+    content="أداة مجانية من Renzo Tools لتحويل ملفات PDF إلى Word بسهولة وسرعة. حوّل ملفات PDF إلى مستندات Word قابلة للتحرير بصيغة DOCX دون الحاجة إلى تثبيت برامج."
+>
+<meta name="author" content="abdalrahman wael">
+    <title>تحويل PDF إلى Word | Renzo Tools</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         Header
+    ================================= -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <!-- Logo -->
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">R</span>
+                <span class="logo-text">Renzo Tools</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav">
+
+                <a href="../index.html" class="nav-link">
+                    الرئيسية
+                </a>
+
+                <a href="../index.html#tools" class="nav-link">
+                    الأدوات
+                </a>
+
+                <a href="../index.html#about" class="nav-link">
+                    من نحن
+                </a>
+
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="تغيير المظهر"
+                    title="تغيير المظهر">
+
+                    <span id="themeIcon">☀️</span>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="فتح القائمة">
+
+                    ☰
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================
+         Main
+    ================================= -->
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="tool-hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="tool-icon-large">
+                        📄
+                    </div>
+
+                    <span class="tool-category">
+                        أدوات PDF
+                    </span>
+
+                    <h1>
+                        تحويل PDF إلى Word
+                    </h1>
+
+                    <p>
+                        حوّل ملفات PDF إلى مستندات Word قابلة للتعديل
+                        بسهولة وسرعة.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             Tool Section
+        ================================= -->
+
+        <section class="tool-section">
+
+            <div class="container">
+
+                <div class="tool-wrapper">
+
+                    <!-- Upload Card -->
+
+                    <div class="tool-card" id="uploadCard">
+
+                        <div class="upload-area" id="uploadArea">
+
+                            <div class="upload-icon">
+                                📤
+                            </div>
+
+                            <h2>
+                                ارفع ملف PDF
+                            </h2>
+
+                            <p>
+                                اسحب الملف وأفلته هنا
+                                <br>
+                                أو اختر ملفًا من جهازك
+                            </p>
+
+                            <button
+                                type="button"
+                                class="primary-button"
+                                id="selectFileBtn">
+
+                                اختيار ملف PDF
+
+                            </button>
+
+                            <p class="upload-note">
+                                الحد الأقصى الموصى به: 20MB
+                            </p>
+
+                            <input
+                                type="file"
+                                id="fileInput"
+                                accept=".pdf,application/pdf"
+                                hidden>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- File Preview -->
+
+                    <div
+                        class="file-card hidden"
+                        id="fileCard">
+
+                        <div class="file-info">
+
+                            <div class="file-icon">
+                                📄
+                            </div>
+
+                            <div class="file-details">
+
+                                <h3 id="fileName">
+                                    document.pdf
+                                </h3>
+
+                                <span id="fileSize">
+                                    0 KB
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="remove-button"
+                            id="removeFileBtn"
+                            aria-label="إزالة الملف"
+                            title="إزالة الملف">
+
+                            ✕
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Convert Button -->
+
+                    <button
+                        type="button"
+                        class="convert-button hidden"
+                        id="convertBtn">
+
+                        <span id="convertText">
+                            تحويل إلى Word
+                        </span>
+
+                    </button>
+
+
+                    <!-- Progress -->
+
+                    <div
+                        class="progress-card hidden"
+                        id="progressCard">
+
+                        <div class="progress-header">
+
+                            <span>
+                                جاري تحويل الملف...
+                            </span>
+
+                            <span id="progressPercent">
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progressFill">
+                            </div>
+
+                        </div>
+
+                        <p>
+                            يرجى الانتظار حتى انتهاء عملية التحويل.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Success -->
+
+                    <div
+                        class="result-card hidden"
+                        id="resultCard">
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+                        <h2>
+                            تم تحويل الملف بنجاح
+                        </h2>
+
+                        <p>
+                            أصبح ملف Word جاهزًا للتحميل.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="download-button"
+                            id="downloadBtn"
+                            download>
+
+                            📥 تحميل ملف Word
+
+                        </a>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="newFileBtn">
+
+                            تحويل ملف آخر
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Error -->
+
+                    <div
+                        class="error-card hidden"
+                        id="errorCard">
+
+                        <div class="error-icon">
+                            !
+                        </div>
+
+                        <h3>
+                            حدث خطأ
+                        </h3>
+
+                        <p id="errorMessage">
+                            تعذر تحويل الملف.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="retryBtn">
+
+                            المحاولة مرة أخرى
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Information -->
+
+                    <div class="info-section">
+
+                        <h2>
+                            كيفية تحويل PDF إلى Word؟
+                        </h2>
+
+                        <div class="steps">
+
+                            <div class="step">
+
+                                <span class="step-number">
+                                    1
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        اختر ملف PDF
+                                    </h3>
+
+                                    <p>
+                                        ارفع ملف PDF الذي تريد تحويله.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="step">
+
+                                <span class="step-number">
+                                    2
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        ابدأ التحويل
+                                    </h3>
+
+                                    <p>
+                                        اضغط على زر تحويل إلى Word
+                                        وانتظر انتهاء المعالجة.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="step">
+
+                                <span class="step-number">
+                                    3
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        حمّل الملف
+                                    </h3>
+
+                                    <p>
+                                        بعد انتهاء التحويل يمكنك تحميل
+                                        ملف Word مباشرة.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================
+         Footer
+    ================================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    <span class="logo-icon">R</span>
+                    <span class="logo-text">Renzo Tools</span>
+                </div>
+
+                <p>
+                    أدوات بسيطة وسريعة لإنجاز مهامك اليومية.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="../index.html">
+                    الرئيسية
+                </a>
+
+                <a href="../index.html#tools">
+                    الأدوات
+                </a>
+
+                <a href="../index.html#about">
+                     من نحن
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Renzo Tools. جميع الحقوق محفوظة.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

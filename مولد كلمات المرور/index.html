@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+    name="description"
+    content="مولد كلمات مرور مجاني من Renzo Tools لإنشاء كلمات مرور قوية وعشوائية بسهولة. اختر طول كلمة المرور واستخدم الأحرف والأرقام والرموز لإنشاء باسورد أكثر أمانًا."
+>
+<meta name="author" content="abdalrahman wael">
+
+    <title>مولد كلمات المرور | Renzo Tools</title>
+
+    <!-- Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Tool CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         Header
+    =============================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                class="brand"
+                href="../index.html"
+                aria-label="Renzo Tools - الصفحة الرئيسية"
+            >
+
+                <img
+                    src="Renzo Tools.png"
+                    alt="شعار Renzo Tools"
+                    class="brand-logo"
+                
+                >
+
+                <span class="brand-name">
+                    Renzo Tools
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="../index.html">
+                    الرئيسية
+                </a>
+
+                <a
+                    href="../index.html#tools"
+                    class="active"
+                >
+                    الأدوات
+                </a>
+
+                <a href="../index.html#about">
+                    من نحن
+                </a>
+
+            </nav>
+
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="تفعيل الوضع الليلي"
+            >
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         Main
+    =============================== -->
+
+    <main>
+
+        <section class="tool-page">
+
+            <div class="container">
+
+                <!-- Breadcrumb -->
+
+                <nav
+                    class="breadcrumb"
+                    aria-label="مسار الصفحة"
+                >
+
+                    <a href="../index.html">
+                        الرئيسية
+                    </a>
+
+                    <span>←</span>
+
+                    <a href="../index.html#tools">
+                        الأدوات
+                    </a>
+
+                    <span>←</span>
+
+                    <span>
+                        مولد كلمات المرور
+                    </span>
+
+                </nav>
+
+
+                <!-- Tool Header -->
+
+                <div class="tool-heading">
+
+                    <div class="tool-icon">
+                        🔐
+                    </div>
+
+                    <span class="section-kicker">
+                        أداة مجانية
+                    </span>
+
+                    <h1>
+                        مولد كلمات المرور
+                    </h1>
+
+                    <p>
+                        أنشئ كلمات مرور قوية وعشوائية بسهولة.
+                    </p>
+
+                </div>
+
+
+                <!-- Tool Card -->
+
+                <div class="generator-card">
+
+                    <!-- Password Result -->
+
+<div class="password-output">
+
+    <label for="passwordOutput">
+        النتيجة
+    </label>
+
+    <div class="password-box">
+
+        <input
+            type="text"
+            id="passwordOutput"
+            readonly
+            placeholder="ستظهر كلمة المرور هنا"
+            aria-label="كلمة المرور الناتجة"
+        >
+
+        <button
+            id="copyButton"
+            type="button"
+            class="icon-button"
+            title="نسخ كلمة المرور"
+            aria-label="نسخ كلمة المرور"
+        >
+            📋
+        </button>
+
+    </div>
+
+</div>
+
+                    <!-- Strength -->
+
+                    <div class="strength-section">
+
+                        <div class="strength-info">
+
+                            <span>
+                                قوة كلمة المرور
+                            </span>
+
+                            <strong id="strengthText">
+                                -
+                            </strong>
+
+                        </div>
+
+                        <div class="strength-bar">
+
+                            <span
+                                id="strengthBar"
+                                class="strength-progress"
+                            ></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Length -->
+
+                    <div class="setting-group">
+
+                        <div class="setting-header">
+
+                            <label for="length">
+                                طول كلمة المرور
+                            </label>
+
+                            <output id="lengthValue">
+                                16
+                            </output>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="length"
+                            min="4"
+                            max="64"
+                            value="16"
+                        >
+
+                    </div>
+
+
+                    <!-- Options -->
+
+                    <div class="options">
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="uppercase"
+                                checked
+                            >
+
+                            <span>
+                                أحرف كبيرة
+                            </span>
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="lowercase"
+                                checked
+                            >
+
+                            <span>
+                                أحرف صغيرة
+                            </span>
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="numbers"
+                                checked
+                            >
+
+                            <span>
+                                أرقام
+                            </span>
+
+                        </label>
+
+
+                        <label class="option">
+
+                            <input
+                                type="checkbox"
+                                id="symbols"
+                                checked
+                            >
+
+                            <span>
+                                رموز
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Generate -->
+
+                    <button
+                        id="generateButton"
+                        type="button"
+                        class="generate-button"
+                    >
+                        🔄 إنشاء كلمة مرور
+                    </button>
+
+                </div>
+
+
+                <!-- Information -->
+
+                <section class="info-section">
+
+                    <h2>
+                        كيف تعمل الأداة؟
+                    </h2>
+
+                    <p>
+                        يحدد Renzo Tools مجموعة الأحرف التي اخترتها
+                        ثم ينشئ كلمة مرور عشوائية باستخدامها.
+                        يمكنك التحكم في طول كلمة المرور ونوع الأحرف
+                        المستخدمة.
+                    </p>
+
+                </section>
+
+
+                <!-- Security Note -->
+
+                <section class="security-note">
+
+                    <span class="security-icon">
+                        🔒
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            خصوصيتك مهمة
+                        </h3>
+
+                        <p>
+                            يتم إنشاء كلمة المرور داخل متصفحك،
+                            ولا يتم إرسالها إلى خادم Renzo Tools.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         Footer
+    =============================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+
+                    <div class="footer-brand">
+                        Renzo Tools
+                    </div>
+
+                    <p>
+                        كل أدوات الإنترنت في مكان واحد.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="../../index.html">
+                        الرئيسية
+                    </a>
+
+                    <a href="../../index.html#tools">
+                        الأدوات
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                © 2026 Renzo Tools — جميع الحقوق محفوظة.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

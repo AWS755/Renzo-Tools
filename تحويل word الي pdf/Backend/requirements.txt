@@ -1,0 +1,3 @@
+Flask
+flask-cors
+pdf2docx

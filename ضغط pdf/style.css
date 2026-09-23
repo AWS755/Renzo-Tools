@@ -1,0 +1,2483 @@
+/* ========================================
+   Tool Hub
+   PDF Compressor
+======================================== */
+
+
+/* ========================================
+   Google Font
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+
+/* ========================================
+   Root Variables
+======================================== */
+
+:root {
+
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+
+    --accent: #06B6D4;
+
+    --background: #F8FAFC;
+    --surface: #FFFFFF;
+
+    --text: #0F172A;
+    --text-muted: #64748B;
+
+    --border: #E2E8F0;
+
+    --success: #16A34A;
+    --success-light: #DCFCE7;
+
+    --danger: #DC2626;
+    --danger-light: #FEE2E2;
+
+    --warning: #F59E0B;
+    --warning-light: #FEF3C7;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    --container: 1160px;
+
+    --shadow-sm:
+        0 4px 12px rgba(15, 23, 42, 0.05);
+
+    --shadow-md:
+        0 12px 35px rgba(15, 23, 42, 0.08);
+
+    --shadow-lg:
+        0 20px 50px rgba(15, 23, 42, 0.10);
+
+}
+
+
+/* ========================================
+   Reset
+======================================== */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: "Cairo", sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    min-height: 100vh;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+button,
+input {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    border: 0;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+/* ========================================
+   Container
+======================================== */
+
+.container {
+
+    width:
+        min(
+            var(--container),
+            calc(100% - 40px)
+        );
+
+    margin-inline: auto;
+
+}
+
+
+/* ========================================
+   Header
+======================================== */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.header-inner {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-inline-end: auto;
+
+}
+
+
+.brand-logo {
+
+    width: 42px;
+
+    height: 42px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+}
+
+
+.brand-name {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 26px;
+
+}
+
+
+.main-nav a {
+
+    color: var(--text-muted);
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    color: var(--primary);
+
+}
+
+
+/* ========================================
+   Theme Toggle
+======================================== */
+
+.theme-toggle,
+.menu-toggle {
+
+    border:
+        1px solid var(--border);
+
+    background:
+        var(--surface);
+
+    color: var(--text);
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    display: grid;
+
+    place-items: center;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.theme-toggle:hover,
+.menu-toggle:hover {
+
+    border-color:
+        #BFDBFE;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+}
+
+
+/* ========================================
+   Tool Hero
+======================================== */
+
+.tool-hero {
+
+    padding:
+        72px 0 55px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(37, 99, 235, 0.10),
+            transparent 45%
+        );
+
+}
+
+
+.tool-hero-content {
+
+    max-width: 760px;
+
+    margin-inline: auto;
+
+}
+
+
+.tool-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        7px 14px;
+
+    border:
+        1px solid #BFDBFE;
+
+    border-radius:
+        999px;
+
+    background:
+        #EFF6FF;
+
+    color:
+        var(--primary-dark);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.tool-hero h1 {
+
+    font-size:
+        clamp(34px, 5vw, 50px);
+
+    line-height:
+        1.25;
+
+    letter-spacing:
+        -1px;
+
+    margin-bottom:
+        16px;
+
+}
+
+
+.tool-hero p {
+
+    max-width:
+        680px;
+
+    margin-inline:
+        auto;
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        18px;
+
+}
+
+
+/* ========================================
+   Tool Section
+======================================== */
+
+.tool-section {
+
+    padding:
+        20px 0 55px;
+
+}
+
+
+.tool-container {
+
+    max-width:
+        900px;
+
+}
+
+
+/* ========================================
+   Main Tool Card
+======================================== */
+
+.tool-card {
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-xl);
+
+    padding:
+        30px;
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+/* ========================================
+   Upload Area
+======================================== */
+
+.upload-area {
+
+    min-height:
+        330px;
+
+    border:
+        2px dashed #CBD5E1;
+
+    border-radius:
+        var(--radius-lg);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        40px 25px;
+
+    background:
+        #FAFCFF;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.upload-area:hover {
+
+    background:
+        #F8FAFF;
+
+    border-color:
+        #93C5FD;
+
+}
+
+
+.upload-area.drag-over {
+
+    background:
+        #EFF6FF;
+
+    border-color:
+        var(--primary);
+
+    transform:
+        scale(1.01);
+
+}
+
+
+.upload-icon {
+
+    width:
+        72px;
+
+    height:
+        72px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        20px;
+
+    background:
+        #EFF6FF;
+
+    font-size:
+        35px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.upload-area h2 {
+
+    font-size:
+        22px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.upload-area p {
+
+    color:
+        var(--text-muted);
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.upload-hint {
+
+    display:
+        block;
+
+    margin-top:
+        15px;
+
+    color:
+        #94A3B8;
+
+    font-size:
+        13px;
+
+}
+
+
+/* ========================================
+   Primary Button
+======================================== */
+
+.primary-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        48px;
+
+    padding:
+        0 24px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.primary-button:hover {
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.20);
+
+}
+
+
+/* ========================================
+   File Information
+======================================== */
+
+.file-info {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        16px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        #F8FAFC;
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.file-icon {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    flex:
+        0 0 52px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        14px;
+
+    background:
+        #EFF6FF;
+
+    font-size:
+        25px;
+
+}
+
+
+.file-details {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+}
+
+
+.file-details h3 {
+
+    font-size:
+        16px;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+
+}
+
+
+.file-details p {
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        14px;
+
+}
+
+
+.remove-button {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    flex:
+        0 0 40px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        10px;
+
+    background:
+        var(--surface);
+
+    color:
+        var(--text-muted);
+
+    cursor:
+        pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.remove-button:hover {
+
+    color:
+        var(--danger);
+
+    border-color:
+        #FECACA;
+
+    background:
+        #FEF2F2;
+
+}
+
+
+/* ========================================
+   Settings
+======================================== */
+
+.settings {
+
+    padding-top:
+        8px;
+
+}
+
+
+.settings-header {
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.settings-header h2 {
+
+    font-size:
+        22px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.settings-header p {
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        14px;
+
+}
+
+
+.setting-group > label {
+
+    display:
+        block;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+/* ========================================
+   Compression Options
+======================================== */
+
+.compression-options {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        14px;
+
+}
+
+
+.compression-option {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    min-height:
+        120px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        var(--surface);
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.compression-option:hover {
+
+    border-color:
+        #93C5FD;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.compression-option:has(
+    input:checked
+) {
+
+    border-color:
+        var(--primary);
+
+    background:
+        #EFF6FF;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+
+}
+
+
+.compression-option input {
+
+    position:
+        absolute;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.option-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+}
+
+
+.option-content strong {
+
+    font-size:
+        16px;
+
+}
+
+
+.option-content small {
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        13px;
+
+}
+
+
+.recommended {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    width:
+        fit-content;
+
+    margin-top:
+        10px;
+
+    padding:
+        3px 8px;
+
+    border-radius:
+        999px;
+
+    background:
+        #DBEAFE;
+
+    color:
+        var(--primary-dark);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* ========================================
+   Compress Button
+======================================== */
+
+.compress-button {
+
+    width:
+        100%;
+
+    min-height:
+        54px;
+
+    margin-top:
+        26px;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.compress-button:hover {
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37, 99, 235, 0.22);
+
+}
+
+
+.compress-button:disabled {
+
+    cursor:
+        not-allowed;
+
+    opacity:
+        0.65;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+
+}
+
+
+.button-icon {
+
+    font-size:
+        19px;
+
+}
+
+
+/* ========================================
+   Loading
+======================================== */
+
+.loading {
+
+    min-height:
+        260px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+}
+
+
+.spinner {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border:
+        4px solid #DBEAFE;
+
+    border-top-color:
+        var(--primary);
+
+    border-radius:
+        50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+.loading h3 {
+
+    font-size:
+        19px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.loading p {
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        14px;
+
+}
+
+
+/* ========================================
+   Result
+======================================== */
+
+.result {
+
+    text-align:
+        center;
+
+    padding:
+        12px 0 5px;
+
+}
+
+
+.success-icon {
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin:
+        0 auto 15px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--success-light);
+
+    color:
+        var(--success);
+
+    font-size:
+        30px;
+
+    font-weight:
+        800;
+
+}
+
+
+.result h2 {
+
+    font-size:
+        24px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.result-message {
+
+    color:
+        var(--text-muted);
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* ========================================
+   Result Statistics
+======================================== */
+
+.result-stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        14px;
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.result-stat {
+
+    padding:
+        18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        #F8FAFC;
+
+}
+
+
+.result-stat span {
+
+    display:
+        block;
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.result-stat strong {
+
+    font-size:
+        18px;
+
+}
+
+
+.result-stat.saving {
+
+    background:
+        var(--success-light);
+
+    border-color:
+        #BBF7D0;
+
+}
+
+
+.result-stat.saving strong {
+
+    color:
+        var(--success);
+
+}
+
+
+/* ========================================
+   Download Button
+======================================== */
+
+.download-button {
+
+    min-height:
+        52px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--success);
+
+    color:
+        white;
+
+    font-weight:
+        800;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.download-button:hover {
+
+    background:
+        #15803D;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(22, 163, 74, 0.20);
+
+}
+
+
+/* ========================================
+   Secondary Button
+======================================== */
+
+.secondary-button {
+
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    margin-top:
+        12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        11px;
+
+    background:
+        var(--surface);
+
+    color:
+        var(--text);
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.secondary-button:hover {
+
+    background:
+        #F8FAFC;
+
+    border-color:
+        #CBD5E1;
+
+}
+
+
+/* ========================================
+   Tool Note
+======================================== */
+
+.tool-note {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        12px;
+
+    margin-top:
+        18px;
+
+    padding:
+        18px 20px;
+
+    border:
+        1px solid #BFDBFE;
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        #EFF6FF;
+
+}
+
+
+.note-icon {
+
+    font-size:
+        22px;
+
+    line-height:
+        1.4;
+
+}
+
+
+.tool-note strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+}
+
+
+.tool-note p {
+
+    color:
+        #475569;
+
+    font-size:
+        13px;
+
+}
+
+
+/* ========================================
+   Advertisement
+======================================== */
+
+.ad-section {
+
+    padding:
+        12px 0 40px;
+
+}
+
+
+.ad-placeholder {
+
+    width:
+        min(728px, 100%);
+
+    min-height:
+        90px;
+
+    margin-inline:
+        auto;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px dashed #CBD5E1;
+
+    background:
+        #F1F5F9;
+
+    color:
+        #94A3B8;
+
+    font-size:
+        13px;
+
+}
+
+
+/* ========================================
+   About Tool
+======================================== */
+
+.about-tool {
+
+    padding:
+        70px 0;
+
+}
+
+
+.section-heading {
+
+    text-align:
+        center;
+
+    max-width:
+        700px;
+
+    margin:
+        0 auto 36px;
+
+}
+
+
+.section-kicker {
+
+    color:
+        var(--primary);
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        32px;
+
+    margin:
+        6px 0 8px;
+
+}
+
+
+.section-heading p {
+
+    color:
+        var(--text-muted);
+
+}
+
+
+/* ========================================
+   Features
+======================================== */
+
+.features-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.feature-card {
+
+    padding:
+        28px;
+
+    text-align:
+        center;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-lg);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #BFDBFE;
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+.feature-icon {
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.feature-card h3 {
+
+    margin:
+        8px 0;
+
+    font-size:
+        18px;
+
+}
+
+
+.feature-card p {
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        14px;
+
+}
+
+
+/* ========================================
+   Footer
+======================================== */
+
+.site-footer {
+
+    margin-top:
+        20px;
+
+    padding-top:
+        55px;
+
+    background:
+        #0F172A;
+
+    color:
+        #F8FAFC;
+
+}
+
+
+.footer-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:
+        35px;
+
+    padding-bottom:
+        45px;
+
+}
+
+
+.footer-brand {
+
+    font-size:
+        24px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.footer-grid p,
+.footer-grid a {
+
+    color:
+        #94A3B8;
+
+}
+
+
+.footer-grid h3 {
+
+    font-size:
+        16px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.footer-grid a {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.footer-grid a:hover {
+
+    color:
+        white;
+
+}
+
+
+.footer-bottom {
+
+    border-top:
+        1px solid #334155;
+
+    padding:
+        20px 0;
+
+    color:
+        #94A3B8;
+
+    text-align:
+        center;
+
+    font-size:
+        13px;
+
+}
+
+
+/* ========================================
+   Dark Mode
+======================================== */
+
+body.dark-mode {
+
+    --background: #0F172A;
+
+    --surface: #1E293B;
+
+    --text: #F8FAFC;
+
+    --text-muted: #94A3B8;
+
+    --border: #334155;
+
+    background:
+        var(--background);
+
+    color:
+        var(--text);
+
+}
+
+
+/* ========================================
+   Dark Header
+======================================== */
+
+body.dark-mode .site-header {
+
+    background:
+        rgba(15, 23, 42, 0.92);
+
+    border-color:
+        var(--border);
+
+}
+
+
+body.dark-mode .theme-toggle,
+body.dark-mode .menu-toggle {
+
+    background:
+        var(--surface);
+
+    border-color:
+        var(--border);
+
+    color:
+        var(--text);
+
+}
+
+
+/* ========================================
+   Dark Hero
+======================================== */
+
+body.dark-mode .tool-hero {
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(37, 99, 235, 0.18),
+            transparent 45%
+        );
+
+}
+
+
+body.dark-mode .tool-badge {
+
+    background:
+        #172554;
+
+    border-color:
+        #1D4ED8;
+
+    color:
+        #93C5FD;
+
+}
+
+
+/* ========================================
+   Dark Tool Card
+======================================== */
+
+body.dark-mode .tool-card {
+
+    background:
+        var(--surface);
+
+    border-color:
+        var(--border);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ========================================
+   Dark Upload
+======================================== */
+
+body.dark-mode .upload-area {
+
+    background:
+        #172033;
+
+    border-color:
+        #475569;
+
+}
+
+
+body.dark-mode .upload-area:hover,
+body.dark-mode .upload-area.drag-over {
+
+    background:
+        #172554;
+
+    border-color:
+        var(--primary);
+
+}
+
+
+body.dark-mode .upload-icon {
+
+    background:
+        #172554;
+
+}
+
+
+/* ========================================
+   Dark File Info
+======================================== */
+
+body.dark-mode .file-info {
+
+    background:
+        #172033;
+
+    border-color:
+        var(--border);
+
+}
+
+
+body.dark-mode .file-icon {
+
+    background:
+        #172554;
+
+}
+
+
+body.dark-mode .remove-button {
+
+    background:
+        var(--surface);
+
+    border-color:
+        var(--border);
+
+    color:
+        var(--text-muted);
+
+}
+
+
+body.dark-mode .remove-button:hover {
+
+    background:
+        #3F1D1D;
+
+    border-color:
+        #7F1D1D;
+
+    color:
+        #FCA5A5;
+
+}
+
+
+/* ========================================
+   Dark Settings
+======================================== */
+
+body.dark-mode .compression-option {
+
+    background:
+        var(--surface);
+
+    border-color:
+        var(--border);
+
+}
+
+
+body.dark-mode .compression-option:has(
+    input:checked
+) {
+
+    background:
+        #172554;
+
+    border-color:
+        #3B82F6;
+
+}
+
+
+body.dark-mode .recommended {
+
+    background:
+        #1E3A8A;
+
+    color:
+        #93C5FD;
+
+}
+
+
+/* ========================================
+   Dark Loading
+======================================== */
+
+body.dark-mode .spinner {
+
+    border-color:
+        #1E3A8A;
+
+    border-top-color:
+        #60A5FA;
+
+}
+
+
+/* ========================================
+   Dark Result
+======================================== */
+
+body.dark-mode .result-stat {
+
+    background:
+        #172033;
+
+    border-color:
+        var(--border);
+
+}
+
+
+body.dark-mode .result-stat.saving {
+
+    background:
+        #052E16;
+
+    border-color:
+        #166534;
+
+}
+
+
+body.dark-mode .success-icon {
+
+    background:
+        #052E16;
+
+    color:
+        #4ADE80;
+
+}
+
+
+/* ========================================
+   Dark Secondary Button
+======================================== */
+
+body.dark-mode .secondary-button {
+
+    background:
+        var(--surface);
+
+    border-color:
+        var(--border);
+
+    color:
+        var(--text);
+
+}
+
+
+body.dark-mode .secondary-button:hover {
+
+    background:
+        #273449;
+
+    border-color:
+        #475569;
+
+}
+
+
+/* ========================================
+   Dark Note
+======================================== */
+
+body.dark-mode .tool-note {
+
+    background:
+        #172554;
+
+    border-color:
+        #1D4ED8;
+
+}
+
+
+body.dark-mode .tool-note p {
+
+    color:
+        #CBD5E1;
+
+}
+
+
+/* ========================================
+   Dark Advertisement
+======================================== */
+
+body.dark-mode .ad-placeholder {
+
+    background:
+        #1E293B;
+
+    border-color:
+        #475569;
+
+    color:
+        #64748B;
+
+}
+
+
+/* ========================================
+   Dark Features
+======================================== */
+
+body.dark-mode .feature-card {
+
+    background:
+        var(--surface);
+
+    border-color:
+        var(--border);
+
+}
+
+
+body.dark-mode .feature-card:hover {
+
+    border-color:
+        #3B82F6;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ========================================
+   Theme Transition
+======================================== */
+
+body,
+.site-header,
+.tool-card,
+.upload-area,
+.file-info,
+.compression-option,
+.result-stat,
+.feature-card,
+.tool-note,
+.ad-placeholder,
+.theme-toggle,
+.menu-toggle,
+.secondary-button {
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 900px) {
+
+    .compression-options {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .features-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* ========================================
+   Tablet / Mobile
+======================================== */
+
+@media (max-width: 700px) {
+
+    .container {
+
+        width:
+            min(
+                var(--container),
+                calc(100% - 28px)
+            );
+
+    }
+
+
+    .main-nav {
+
+        display:
+            none;
+
+    }
+
+
+    .theme-toggle {
+
+        display:
+            none;
+
+    }
+
+
+    .menu-toggle {
+
+        display:
+            grid;
+
+    }
+
+
+    .tool-hero {
+
+        padding:
+            55px 0 40px;
+
+    }
+
+
+    .tool-hero h1 {
+
+        font-size:
+            34px;
+
+    }
+
+
+    .tool-hero p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .tool-card {
+
+        padding:
+            18px;
+
+        border-radius:
+            16px;
+
+    }
+
+
+    .upload-area {
+
+        min-height:
+            290px;
+
+        padding:
+            30px 18px;
+
+    }
+
+
+    .upload-area h2 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .file-info {
+
+        padding:
+            14px;
+
+        gap:
+            11px;
+
+    }
+
+
+    .file-icon {
+
+        width:
+            46px;
+
+        height:
+            46px;
+
+        flex-basis:
+            46px;
+
+    }
+
+
+    .result-stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .features-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            28px;
+
+    }
+
+
+    .about-tool {
+
+        padding:
+            55px 0;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size:
+            27px;
+
+    }
+
+}
+
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 420px) {
+
+    .tool-hero h1 {
+
+        font-size:
+            29px;
+
+    }
+
+
+    .tool-badge {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .upload-icon {
+
+        width:
+            62px;
+
+        height:
+            62px;
+
+        font-size:
+            30px;
+
+    }
+
+
+    .primary-button {
+
+        width:
+            100%;
+
+    }
+
+
+    .tool-note {
+
+        padding:
+            15px;
+
+    }
+
+}

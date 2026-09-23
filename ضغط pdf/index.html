@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+   <meta
+    name="description"
+    content="أداة ضغط PDF مجانية من Renzo Tools لتقليل حجم ملفات PDF بسهولة وسرعة، مع الحفاظ على جودة مناسبة. صغّر حجم ملف PDF واجعله أسهل للمشاركة والتخزين."
+>
+<meta name="author" content="abdalrahman wael">
+    <title>ضغط PDF | Renzo Tools</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Tool CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     Header
+======================================== -->
+
+<header class="site-header">
+
+    <div class="container header-inner">
+
+
+        <!-- Brand -->
+
+        <a
+            href="../index.html"
+            class="brand"
+        >
+
+            <img
+                src="Renzo Tools.png"
+                alt="Renzo Tools"
+                class="brand-logo"
+            >
+
+            <span class="brand-name">
+                Renzo Tools
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="main-nav">
+
+            <a
+                href="../index.html"
+            >
+                الرئيسية
+            </a>
+
+            <a
+                href="../index.html#tools"
+                class="active"
+            >
+                الأدوات
+            </a>
+
+        </nav>
+
+
+        <!-- Theme -->
+
+        <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="تفعيل الوضع الليلي"
+        >
+            🌙
+        </button>
+
+
+        <!-- Mobile Menu -->
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="فتح القائمة"
+        >
+            ☰
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- ========================================
+     Main
+======================================== -->
+
+<main>
+
+
+    <!-- ====================================
+         Tool Hero
+    ==================================== -->
+
+    <section class="tool-hero">
+
+        <div class="container">
+
+
+            <div class="tool-hero-content">
+
+
+                <span class="tool-badge">
+                    📄 أداة ضغط PDF
+                </span>
+
+
+                <h1>
+                    ضغط ملفات PDF بسهولة
+                </h1>
+
+
+                <p>
+                    قلل حجم ملفات PDF بسرعة وسهولة،
+                    واجعلها أسهل في المشاركة والرفع
+                    مع الحفاظ على جودة الملف قدر الإمكان.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         Tool
+    ==================================== -->
+
+    <section class="tool-section">
+
+        <div class="container tool-container">
+
+
+            <!-- =================================
+                 Upload Card
+            ================================== -->
+
+            <div
+                class="tool-card"
+                id="toolCard"
+            >
+
+
+                <!-- Upload Area -->
+
+                <div
+                    class="upload-area"
+                    id="uploadArea"
+                >
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+
+                    <h2>
+                        اسحب ملف PDF هنا
+                    </h2>
+
+
+                    <p>
+                        أو اختر ملفًا من جهازك
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="chooseBtn"
+                    >
+                        اختيار ملف PDF
+                    </button>
+
+
+                    <input
+                        type="file"
+                        id="pdfInput"
+                        accept=".pdf,application/pdf"
+                        hidden
+                    >
+
+
+                    <span class="upload-hint">
+                        PDF فقط • الحد الأقصى 20MB
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     File Information
+                ================================== -->
+
+                <div
+                    class="file-info"
+                    id="fileInfo"
+                    hidden
+                >
+
+                    <div class="file-icon">
+                        📄
+                    </div>
+
+
+                    <div class="file-details">
+
+                        <h3 id="fileName">
+                            document.pdf
+                        </h3>
+
+                        <p>
+                            الحجم:
+                            <span id="originalSize">
+                                -
+                            </span>
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="remove-button"
+                        id="removeBtn"
+                        aria-label="إزالة الملف"
+                    >
+                        ✕
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     Compression Settings
+                ================================== -->
+
+                <div
+                    class="settings"
+                    id="settings"
+                    hidden
+                >
+
+
+                    <div class="settings-header">
+
+                        <h2>
+                            إعدادات الضغط
+                        </h2>
+
+                        <p>
+                            اختر مستوى الضغط المناسب لملفك.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Compression Level -->
+
+                    <div class="setting-group">
+
+                        <label>
+                            مستوى الضغط
+                        </label>
+
+
+                        <div class="compression-options">
+
+
+                            <!-- Low -->
+
+                            <label
+                                class="compression-option"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="compression"
+                                    value="low"
+                                >
+
+                                <span class="option-content">
+
+                                    <strong>
+                                        ضغط منخفض
+                                    </strong>
+
+                                    <small>
+                                        جودة أعلى وحجم أكبر
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <!-- Medium -->
+
+                            <label
+                                class="compression-option selected"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="compression"
+                                    value="medium"
+                                    checked
+                                >
+
+                                <span class="option-content">
+
+                                    <strong>
+                                        ضغط متوسط
+                                    </strong>
+
+                                    <small>
+                                        توازن بين الجودة والحجم
+                                    </small>
+
+                                </span>
+
+                                <span class="recommended">
+                                    موصى به
+                                </span>
+
+                            </label>
+
+
+
+                            <!-- High -->
+
+                            <label
+                                class="compression-option"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="compression"
+                                    value="high"
+                                >
+
+                                <span class="option-content">
+
+                                    <strong>
+                                        ضغط قوي
+                                    </strong>
+
+                                    <small>
+                                        حجم أصغر وضغط أعلى
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Compress Button -->
+
+                    <button
+                        type="button"
+                        class="compress-button"
+                        id="compressBtn"
+                    >
+
+                        <span class="button-icon">
+                            📦
+                        </span>
+
+                        ضغط PDF
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     Loading
+                ================================== -->
+
+                <div
+                    class="loading"
+                    id="loading"
+                    hidden
+                >
+
+                    <div class="spinner"></div>
+
+
+                    <h3>
+                        جارٍ ضغط ملف PDF...
+                    </h3>
+
+
+                    <p>
+                        قد تستغرق العملية بضع لحظات.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     Result
+                ================================== -->
+
+                <div
+                    class="result"
+                    id="result"
+                    hidden
+                >
+
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+
+                    <h2>
+                        تم ضغط الملف بنجاح
+                    </h2>
+
+
+                    <p class="result-message">
+                        أصبح ملفك جاهزًا للتحميل.
+                    </p>
+
+
+
+                    <!-- Statistics -->
+
+                    <div class="result-stats">
+
+
+                        <div class="result-stat">
+
+                            <span>
+                                الحجم الأصلي
+                            </span>
+
+                            <strong id="resultOriginal">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-stat">
+
+                            <span>
+                                الحجم الجديد
+                            </span>
+
+                            <strong id="resultCompressed">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-stat saving">
+
+                            <span>
+                                نسبة التوفير
+                            </span>
+
+                            <strong id="savingPercent">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Download -->
+
+                    <a
+                        href="#"
+                        class="download-button"
+                        id="downloadBtn"
+                        download
+                    >
+
+                        ⬇️ تحميل PDF المضغوط
+
+                    </a>
+
+
+                    <!-- Another File -->
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="anotherBtn"
+                    >
+
+                        ضغط ملف آخر
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 Tool Note
+            ================================== -->
+
+            <div class="tool-note">
+
+                <span class="note-icon">
+                    💡
+                </span>
+
+                <div>
+
+                    <strong>
+                        ملاحظة
+                    </strong>
+
+                    <p>
+                        قد يختلف مقدار تقليل حجم الملف
+                        حسب محتوى PDF، خصوصًا إذا كان
+                        الملف مضغوطًا بالفعل.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         Advertisement
+    ==================================== -->
+
+    <section class="ad-section">
+
+        <div class="container">
+
+            <div class="ad-placeholder">
+                إعلان
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         About Tool
+    ==================================== -->
+
+    <section class="about-tool">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span class="section-kicker">
+                    لماذا تستخدم الأداة؟
+                </span>
+
+                <h2>
+                    ضغط PDF بطريقة سهلة
+                </h2>
+
+                <p>
+                    أداة بسيطة تساعدك على تقليل حجم
+                    ملفات PDF دون خطوات معقدة.
+                </p>
+
+            </div>
+
+
+
+            <div class="features-grid">
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        سهلة وسريعة
+                    </h3>
+
+                    <p>
+                        ارفع الملف واختر مستوى الضغط
+                        ثم ابدأ العملية بسهولة.
+                    </p>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        📉
+                    </div>
+
+                    <h3>
+                        حجم أصغر
+                    </h3>
+
+                    <p>
+                        ساعد على تقليل حجم الملف
+                        لتسهيل رفعه ومشاركته.
+                    </p>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <h3>
+                        تجربة بسيطة
+                    </h3>
+
+                    <p>
+                        واجهة واضحة ومباشرة بدون
+                        خطوات غير ضرورية.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- ========================================
+     Footer
+======================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <!-- Brand -->
+
+            <div>
+
+                <div class="footer-brand">
+                    Renzo Tools
+                </div>
+
+                <p>
+                    مجموعة من الأدوات المفيدة
+                    لإنجاز مهامك اليومية بسهولة.
+                </p>
+
+            </div>
+
+
+
+            <!-- Tools -->
+
+            <div>
+
+                <h3>
+                    الأدوات
+                </h3>
+
+                <a href="../password-generator/index.html">
+                    مولد كلمات المرور
+                </a>
+
+                <a href="../color-picker/index.html">
+                    Color Picker
+                </a>
+
+                <a href="../image-resizer/index.html">
+                    تغيير حجم الصور
+                </a>
+
+                <a href="../image-converter/index.html">
+                    تحويل الصور
+                </a>
+
+                <a href="../image-compressor/index.html">
+                    ضغط الصور
+                </a>
+
+                <a href="#">
+                    ضغط PDF
+                </a>
+
+            </div>
+
+
+
+            <!-- Links -->
+
+            <div>
+
+                <h3>
+                    روابط
+                </h3>
+
+                <a href="../index.html">
+                    الرئيسية
+                </a>
+
+                <a href="../index.html#tools">
+                    جميع الأدوات
+                </a>
+
+                <a href="../index.html#faq">
+                    الأسئلة الشائعة
+                </a>
+
+            </div>
+
+
+
+            <!-- Project -->
+
+            <div>
+
+                <h3>
+                    Renzo Tools
+                </h3>
+
+                <a href="#">
+                    حول المشروع
+                </a>
+
+                <a href="#">
+                    سياسة الخصوصية
+                </a>
+
+                <a href="#">
+                    تواصل معنا
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            © 2026 Renzo Tools — جميع الحقوق محفوظة
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- ========================================
+     JavaScript
+======================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

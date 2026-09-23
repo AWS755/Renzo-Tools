@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+<meta name="author" content="abdalrahman wael">
+    <meta
+    name="description"
+    content="آلة حاسبة مجانية من Renzo Tools لإجراء العمليات الحسابية بسهولة وسرعة، مثل الجمع والطرح والضرب والقسمة والنسب المئوية والأقواس والأرقام العشرية."
+>
+
+    <meta
+        name="keywords"
+        content="حاسبة, حاسبة رياضية, نسبة مئوية, حسابات, Renzo Tools"
+    >
+
+    <title>
+        الحاسبة الرياضية | Renzo Tools
+    </title>
+
+
+    <!-- ==================================================
+         Google Fonts - Cairo
+    =================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ==================================================
+         CSS
+    =================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     Header
+====================================================== -->
+
+<header class="site-header">
+
+    <div class="container header-inner">
+
+
+        <!-- Logo -->
+
+        <a
+            href="../index.html"
+            class="brand"
+            aria-label="Renzo Tools - الصفحة الرئيسية"
+        >
+
+            <img
+                src="Renzo Tools.png"
+                alt="شعار Renzo Tools"
+                class="brand-logo"
+            >
+
+            <span class="brand-name">
+                Renzo Tools
+            </span>
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="main-nav"
+            aria-label="القائمة الرئيسية"
+        >
+
+            <a href="../index.html">
+                الرئيسية
+            </a>
+
+            <a
+                href="../index.html#tools"
+                class="active"
+            >
+                الأدوات
+            </a>
+
+            <a href="../index.html#how">
+                كيف تعمل؟
+            </a>
+
+            <a href="../index.html#faq">
+                الأسئلة الشائعة
+            </a>
+
+        </nav>
+
+
+        <!-- Dark Mode -->
+
+        <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="تفعيل الوضع الليلي"
+            title="تغيير المظهر"
+        >
+            🌙
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     Main
+====================================================== -->
+
+<main class="tool-page">
+
+    <div class="container">
+
+
+        <!-- ==================================================
+             Breadcrumb
+        =================================================== -->
+
+        <div class="breadcrumb">
+
+            <a href="../index.html">
+                الرئيسية
+            </a>
+
+            <span>
+                ←
+            </span>
+
+            <a href="../index.html#tools">
+                الأدوات
+            </a>
+
+            <span>
+                ←
+            </span>
+
+            <span>
+                الحاسبة الرياضية
+            </span>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             Tool Heading
+        =================================================== -->
+
+        <section class="tool-heading">
+
+            <div class="tool-icon">
+                🧮
+            </div>
+
+            <span class="section-kicker">
+                أداة الحساب
+            </span>
+
+            <h1>
+                الحاسبة الرياضية
+            </h1>
+
+            <p>
+                احسب العمليات الرياضية والنسب المئوية
+                والعمليات المركبة بسهولة وسرعة.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             Calculator
+        ================================================== -->
+
+        <section
+            class="calculator-card"
+            aria-label="الحاسبة الرياضية"
+        >
+
+
+            <!-- ==================================================
+                 Display
+            ================================================== -->
+
+            <div class="calculator-display">
+
+
+                <!-- Previous Expression -->
+
+                <div
+                    class="display-expression"
+                    id="displayExpression"
+                    aria-label="العملية السابقة"
+                ></div>
+
+
+                <!-- Current Value -->
+
+                <div
+                    class="display-value"
+                    id="displayValue"
+                    aria-live="polite"
+                    aria-label="القيمة الحالية"
+                >
+                    0
+                </div>
+
+
+                <!-- Copy Result -->
+
+                <button
+                    type="button"
+                    class="copy-result"
+                    id="copyResultBtn"
+                    title="نسخ النتيجة"
+                    aria-label="نسخ النتيجة"
+                >
+                    📋
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 Calculator Actions
+            ================================================== -->
+
+            <div class="calculator-actions">
+
+                <button
+                    type="button"
+                    class="calculator-action clear-action"
+                    id="clearBtn"
+                >
+                    AC
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-action delete-action"
+                    id="deleteBtn"
+                >
+                    ⌫
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-action operator-action"
+                    data-operation="%"
+                >
+                    %
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-action operator-action"
+                    data-operation="/"
+                >
+                    ÷
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 Calculator Keys
+            ================================================== -->
+
+            <div
+                class="calculator-grid"
+                id="calculatorGrid"
+            >
+
+
+                <!-- Row 1 -->
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="7"
+                >
+                    7
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="8"
+                >
+                    8
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="9"
+                >
+                    9
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key operator-key"
+                    data-operation="*"
+                >
+                    ×
+                </button>
+
+
+                <!-- Row 2 -->
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="4"
+                >
+                    4
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="5"
+                >
+                    5
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="6"
+                >
+                    6
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key operator-key"
+                    data-operation="-"
+                >
+                    −
+                </button>
+
+
+                <!-- Row 3 -->
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="1"
+                >
+                    1
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="2"
+                >
+                    2
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="3"
+                >
+                    3
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key operator-key"
+                    data-operation="+"
+                >
+                    +
+                </button>
+
+
+                <!-- Row 4 -->
+
+                <button
+                    type="button"
+                    class="calculator-key number-key zero-key"
+                    data-value="0"
+                >
+                    0
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key number-key"
+                    data-value="."
+                >
+                    .
+                </button>
+
+                <button
+                    type="button"
+                    class="calculator-key equals-key"
+                    id="equalsBtn"
+                >
+                    =
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 Parentheses
+            =================================================== -->
+
+            <div class="advanced-calculator">
+
+                <div class="advanced-heading">
+
+                    <h2>
+                        العمليات المتقدمة
+                    </h2>
+
+                    <p>
+                        استخدم الأقواس والعمليات المركبة.
+                    </p>
+
+                </div>
+
+
+                <div class="advanced-buttons">
+
+                    <button
+                        type="button"
+                        class="advanced-key"
+                        data-value="("
+                    >
+                        (
+                    </button>
+
+                    <button
+                        type="button"
+                        class="advanced-key"
+                        data-value=")"
+                    >
+                        )
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             Percentage Calculator
+        =================================================== -->
+
+        <section
+            class="percentage-section"
+            aria-label="حاسبة النسبة المئوية"
+        >
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h2>
+                        حاسبة النسبة المئوية
+                    </h2>
+
+                    <p>
+                        احسب النسبة المئوية بسهولة.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="percentage-form">
+
+
+                <!-- Percentage -->
+
+                <div class="input-group">
+
+                    <label for="percentageValue">
+                        النسبة المئوية
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="number"
+                            id="percentageValue"
+                            placeholder="مثال: 20"
+                            inputmode="decimal"
+                        >
+
+                        <span>
+                            %
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Of -->
+
+                <div class="percentage-symbol">
+                    من
+                </div>
+
+
+                <!-- Number -->
+
+                <div class="input-group">
+
+                    <label for="percentageBase">
+                        الرقم
+                    </label>
+
+                    <input
+                        type="number"
+                        id="percentageBase"
+                        placeholder="مثال: 500"
+                        inputmode="decimal"
+                    >
+
+                </div>
+
+
+                <!-- Calculate -->
+
+                <button
+                    type="button"
+                    class="percentage-button"
+                    id="percentageBtn"
+                >
+                    احسب
+                </button>
+
+            </div>
+
+
+            <!-- Percentage Result -->
+
+            <div
+                class="percentage-result"
+                id="percentageResult"
+                hidden
+            >
+
+                <span>
+                    النتيجة
+                </span>
+
+                <strong id="percentageResultValue">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             Math Question Solver
+        =================================================== -->
+
+        <section
+            class="question-section"
+            aria-label="حل الأسئلة الرياضية"
+        >
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <h2>
+                        حل سؤال رياضي
+                    </h2>
+
+                    <p>
+                        اكتب عملية أو سؤالًا رياضيًا بسيطًا
+                        وسنحاول حساب النتيجة.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Question Input -->
+
+            <div class="question-input-wrapper">
+
+                <label for="mathQuestion">
+                    اكتب السؤال أو العملية
+                </label>
+
+                <textarea
+                    id="mathQuestion"
+                    rows="3"
+                    placeholder="مثال: ما هو 20% من 500؟"
+                ></textarea>
+
+            </div>
+
+
+            <!-- Question Examples -->
+
+            <div class="question-examples">
+
+                <span>
+                    أمثلة:
+                </span>
+
+                <button
+                    type="button"
+                    class="example-question"
+                    data-question="ما هو 20% من 500؟"
+                >
+                    20% من 500
+                </button>
+
+                <button
+                    type="button"
+                    class="example-question"
+                    data-question="25 + 10 × 3"
+                >
+                    25 + 10 × 3
+                </button>
+
+                <button
+                    type="button"
+                    class="example-question"
+                    data-question="إذا كان معي 150 ودفعت 35، كم يتبقى؟"
+                >
+                    150 - 35
+                </button>
+
+            </div>
+
+
+            <!-- Solve -->
+
+            <button
+                type="button"
+                class="solve-question-button"
+                id="solveQuestionBtn"
+            >
+                🧮 حل السؤال
+            </button>
+
+
+            <!-- Question Result -->
+
+            <div
+                class="question-result"
+                id="questionResult"
+                hidden
+            >
+
+                <div class="question-result-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        النتيجة
+                    </span>
+
+                    <strong id="questionResultValue">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             Security Note
+        =================================================== -->
+
+        <section class="security-note">
+
+            <div class="security-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    حساباتك تتم على جهازك
+                </h3>
+
+                <p>
+                    جميع العمليات الحسابية تتم مباشرة داخل
+                    متصفحك ولا تحتاج إلى إرسال بياناتك إلى
+                    خادم خارجي.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             How To Use
+        =================================================== -->
+
+        <section class="info-section">
+
+            <h2>
+                كيفية استخدام الحاسبة؟
+            </h2>
+
+
+            <div class="info-steps">
+
+
+                <!-- Step 1 -->
+
+                <div class="info-step">
+
+                    <span class="step-number">
+                        1
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            أدخل العملية
+                        </h3>
+
+                        <p>
+                            استخدم أزرار الحاسبة لإدخال
+                            الأرقام والعمليات الحسابية.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Step 2 -->
+
+                <div class="info-step">
+
+                    <span class="step-number">
+                        2
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            اختر العملية المطلوبة
+                        </h3>
+
+                        <p>
+                            يمكنك استخدام الجمع والطرح والضرب
+                            والقسمة والنسبة المئوية والأقواس.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Step 3 -->
+
+                <div class="info-step">
+
+                    <span class="step-number">
+                        3
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            احصل على النتيجة
+                        </h3>
+
+                        <p>
+                            اضغط على علامة =
+                            لعرض النتيجة مباشرة.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FAQ
+        =================================================== -->
+
+        <section
+            class="faq-section"
+            id="faq"
+        >
+
+            <div class="faq-heading">
+
+                <span class="section-kicker">
+                    FAQ
+                </span>
+
+                <h2>
+                    الأسئلة الشائعة
+                </h2>
+
+                <p>
+                    إجابات عن أكثر الأسئلة شيوعًا حول
+                    الحاسبة الرياضية.
+                </p>
+
+            </div>
+
+
+            <div class="faq-list">
+
+
+                <!-- FAQ 1 -->
+
+                <details class="faq-item">
+
+                    <summary>
+                        ما العمليات التي تدعمها الحاسبة؟
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            تدعم الحاسبة الجمع والطرح والضرب
+                            والقسمة والنسب المئوية والأرقام
+                            العشرية والأقواس والعمليات المركبة.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+                <!-- FAQ 2 -->
+
+                <details class="faq-item">
+
+                    <summary>
+                        هل يمكنني استخدام الأقواس؟
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            نعم، يمكنك استخدام الأقواس لتنظيم
+                            العمليات الحسابية وتحديد ترتيب
+                            تنفيذ العمليات.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+                <!-- FAQ 3 -->
+
+                <details class="faq-item">
+
+                    <summary>
+                        كيف أحسب النسبة المئوية؟
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            أدخل النسبة المطلوبة والرقم الأساسي
+                            في حاسبة النسبة المئوية، ثم اضغط
+                            على زر "احسب".
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+                <!-- FAQ 4 -->
+
+                <details class="faq-item">
+
+                    <summary>
+                        هل تعمل الحاسبة بدون إنترنت؟
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            نعم، بعد تحميل الصفحة يمكن إجراء
+                            العمليات الحسابية مباشرة داخل
+                            المتصفح دون الحاجة إلى خادم.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+                <!-- FAQ 5 -->
+
+                <details class="faq-item">
+
+                    <summary>
+                        هل يمكن نسخ النتيجة؟
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            نعم، يمكنك الضغط على زر النسخ
+                            الموجود بجانب نتيجة الحاسبة
+                            لنسخها إلى الحافظة.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+                <!-- FAQ 6 -->
+
+                <details class="faq-item">
+
+                    <summary>
+                        هل تعمل الأداة على الهاتف؟
+                    </summary>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            نعم، سيتم تصميم الأداة لتعمل
+                            بشكل متجاوب على الهواتف والأجهزة
+                            اللوحية وأجهزة الكمبيوتر.
+                        </p>
+
+                    </div>
+
+                </details>
+
+
+            </div>
+
+        </section>
+
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     Footer
+====================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+
+        <div class="footer-content">
+
+
+            <!-- Footer Brand -->
+
+            <div>
+
+                <div class="footer-brand">
+                    Renzo Tools
+                </div>
+
+                <p>
+                    أدوات إنترنت بسيطة،
+                    سريعة ومفيدة للجميع.
+                </p>
+
+            </div>
+
+
+            <!-- Footer Links -->
+
+            <div class="footer-links">
+
+                <a href="../../index.html">
+                    الرئيسية
+                </a>
+
+                <a href="../../index.html#tools">
+                    الأدوات
+                </a>
+
+                <a href="../../index.html#faq">
+                    الأسئلة الشائعة
+                </a>
+
+                <a href="../../index.html#contact">
+                    تواصل معنا
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 Renzo Tools —
+            جميع الحقوق محفوظة
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JavaScript
+====================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

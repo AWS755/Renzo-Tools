@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+    name="description"
+    content="أداة ضغط الصور المجانية من Renzo Tools لتقليل حجم الصور بسهولة مع الحفاظ على جودة مناسبة. اضغط صور JPG وPNG وWebP بسرعة دون الحاجة إلى برامج."
+>
+<meta name="author" content="abdalrahman wael">
+    <meta
+        name="keywords"
+        content="ضغط الصور, تصغير حجم الصور, ضغط JPG, ضغط PNG, ضغط WebP, Renzo Tools"
+    >
+
+    <title>
+        ضغط الصور | Renzo Tools
+    </title>
+
+
+    <!-- =================================
+         Google Font
+    ================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =================================
+         CSS
+    ================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         Header
+    ================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+
+            <!-- Logo -->
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="Renzo Tools - الصفحة الرئيسية"
+            >
+
+                <img
+                    src="Renzo Tools.png"
+                    alt="شعار Renzo Tools"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    Renzo Tools
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="main-nav"
+                aria-label="القائمة الرئيسية"
+            >
+
+                <a href="../index.html">
+                    الرئيسية
+                </a>
+
+                <a
+                    href="../index.html#tools"
+                    class="active"
+                >
+                    الأدوات
+                </a>
+
+                <a href="../index.html#about">
+                    من نحن
+                </a>
+
+            </nav>
+
+
+            <!-- Theme -->
+
+            <button
+                type="button"
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="تفعيل الوضع الليلي"
+            >
+
+                🌙
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================
+         Main
+    ================================== -->
+
+    <main>
+
+
+        <section class="tool-page">
+
+            <div class="container">
+
+
+                <!-- =================================
+                     Breadcrumb
+                ================================== -->
+
+                <nav
+                    class="breadcrumb"
+                    aria-label="مسار الصفحة"
+                >
+
+                    <a href="../index.html">
+                        الرئيسية
+                    </a>
+
+                    <span>
+                        ←
+                    </span>
+
+                    <a href="../index.html#tools">
+                        الأدوات
+                    </a>
+
+                    <span>
+                        ←
+                    </span>
+
+                    <span>
+                        ضغط الصور
+                    </span>
+
+                </nav>
+
+
+
+                <!-- =================================
+                     Tool Heading
+                ================================== -->
+
+                <div class="tool-heading">
+
+
+                    <div class="tool-icon">
+                        🗜️
+                    </div>
+
+
+                    <span class="section-kicker">
+                        أداة مجانية
+                    </span>
+
+
+                    <h1>
+                        ضغط الصور
+                    </h1>
+
+
+                    <p>
+                        قلل حجم صورك بسهولة مع الحفاظ على
+                        جودة مناسبة، واحصل على صور أصغر
+                        وأسرع للاستخدام والمشاركة.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     Main Tool Card
+                ================================== -->
+
+                <div class="compressor-card">
+
+
+                    <!-- =================================
+                         Upload Area
+                    ================================== -->
+
+                    <div
+                        class="upload-area"
+                        id="uploadArea"
+                    >
+
+
+                        <div class="upload-icon">
+                            🖼️
+                        </div>
+
+
+                        <h2>
+                            اختر صورة لضغطها
+                        </h2>
+
+
+                        <p>
+                            اسحب الصورة إلى هنا أو اخترها
+                            من جهازك
+                        </p>
+
+
+                        <span class="upload-formats">
+                            JPG • PNG • WebP
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="choose-btn"
+                            id="chooseBtn"
+                        >
+                            اختيار صورة
+                        </button>
+
+
+                        <input
+                            type="file"
+                            id="imageInput"
+                            accept="image/jpeg,image/png,image/webp"
+                            hidden
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         Image Information
+                         Hidden until image selected
+                    ================================== -->
+
+                    <div
+                        class="image-info"
+                        id="imageInfo"
+                        hidden
+                    >
+
+
+                        <div class="info-header">
+
+                            <h2>
+                                الصورة المحددة
+                            </h2>
+
+
+                            <button
+                                type="button"
+                                class="remove-image"
+                                id="removeBtn"
+                                aria-label="إزالة الصورة"
+                            >
+                                ✕
+                            </button>
+
+                        </div>
+
+
+                        <div class="selected-file">
+
+
+                            <div class="file-icon">
+                                🖼️
+                            </div>
+
+
+                            <div class="file-details">
+
+                                <strong id="fileName">
+                                    image.jpg
+                                </strong>
+
+                                <span id="originalSize">
+                                    -
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         Compression Settings
+                         Hidden until image selected
+                    ================================== -->
+
+                    <div
+                        class="settings"
+                        id="settings"
+                        hidden
+                    >
+
+
+                        <div class="settings-heading">
+
+                            <h2>
+                                إعدادات الضغط
+                            </h2>
+
+                            <p>
+                                اختر جودة الصورة والصيغة
+                                المناسبة قبل بدء الضغط.
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             Quality
+                        ================================== -->
+
+                        <div class="setting-group">
+
+
+                            <div class="setting-header">
+
+                                <label for="quality">
+                                    جودة الصورة
+                                </label>
+
+
+                                <strong id="qualityValue">
+                                    80%
+                                </strong>
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                id="quality"
+                                min="10"
+                                max="100"
+                                value="80"
+                                step="5"
+                            >
+
+
+                            <div class="range-labels">
+
+                                <span>
+                                    حجم أصغر
+                                </span>
+
+                                <span>
+                                    جودة أعلى
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             Format
+                        ================================== -->
+
+                        <div class="setting-group">
+
+
+                            <label for="format">
+                                صيغة الصورة الناتجة
+                            </label>
+
+
+                            <select id="format">
+
+                                <option value="image/jpeg">
+                                    JPG
+                                </option>
+
+                                <option value="image/webp">
+                                    WebP
+                                </option>
+
+                                <option value="image/png">
+                                    PNG
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             Compress Button
+                        ================================== -->
+
+                        <button
+                            type="button"
+                            class="compress-btn"
+                            id="compressBtn"
+                        >
+
+                            🗜️ ضغط الصورة
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         Loading
+                    ================================== -->
+
+                    <div
+                        class="loading"
+                        id="loading"
+                        hidden
+                    >
+
+
+                        <div class="spinner">
+                        </div>
+
+
+                        <p>
+                            جاري ضغط الصورة...
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         Result
+                         Hidden until compression
+                    ================================== -->
+
+                    <div
+                        class="result"
+                        id="result"
+                        hidden
+                    >
+
+
+                        <!-- Result Header -->
+
+                        <div class="result-title">
+
+
+                            <span>
+                                ✓
+                            </span>
+
+
+                            <div>
+
+                                <span class="section-kicker">
+                                    اكتملت العملية
+                                </span>
+
+                                <h2>
+                                    تم ضغط الصورة بنجاح
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             Statistics
+                        ================================== -->
+
+                        <div class="stats">
+
+
+                            <div class="stat-card">
+
+                                <span>
+                                    الحجم الأصلي
+                                </span>
+
+
+                                <strong id="resultOriginal">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="stat-card">
+
+                                <span>
+                                    الحجم الجديد
+                                </span>
+
+
+                                <strong id="resultCompressed">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="stat-card saving">
+
+                                <span>
+                                    نسبة التوفير
+                                </span>
+
+
+                                <strong id="savingPercent">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             Preview
+                        ================================== -->
+
+                        <div class="preview">
+
+
+                            <h3>
+                                معاينة الصورة المضغوطة
+                            </h3>
+
+
+                            <div class="preview-box">
+
+                                <img
+                                    id="previewImage"
+                                    src=""
+                                    alt="معاينة الصورة المضغوطة"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             Result Actions
+                        ================================== -->
+
+                        <div class="result-actions">
+
+
+                            <a
+                                id="downloadBtn"
+                                class="download-btn"
+                                href="#"
+                                download
+                            >
+
+                                ⬇️ تحميل الصورة المضغوطة
+
+                            </a>
+
+
+                            <button
+                                type="button"
+                                id="anotherBtn"
+                                class="another-btn"
+                            >
+
+                                🔄 ضغط صورة أخرى
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     Privacy / Security Note
+                ================================== -->
+
+                <section class="security-note">
+
+
+                    <div class="security-icon">
+                        🔒
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            صورك لا تغادر جهازك
+                        </h2>
+
+
+                        <p>
+                            تتم معالجة الصور داخل متصفحك
+                            مباشرة، ولا تحتاج إلى رفعها
+                            إلى خادم خارجي لاستخدام الأداة.
+                        </p>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================
+                     Tool Summary
+                ================================== -->
+
+                <section class="info-section">
+
+
+                    <div class="section-kicker">
+                        تعرف على الأداة
+                    </div>
+
+
+                    <h2>
+                        ما هي أداة ضغط الصور؟
+                    </h2>
+
+
+                    <p>
+                        أداة ضغط الصور هي أداة تساعدك على
+                        تقليل حجم ملفات الصور لتصبح أسهل
+                        في التخزين والمشاركة والرفع على
+                        المواقع والتطبيقات.
+                    </p>
+
+
+                    <p>
+                        يمكنك اختيار الصورة من جهازك ثم
+                        تحديد مستوى الجودة والصيغة التي
+                        تريد استخدامها، وبعد ذلك تقوم الأداة
+                        بإنشاء نسخة مضغوطة من الصورة.
+                    </p>
+
+
+                </section>
+
+
+
+                <!-- =================================
+                     Benefits
+                ================================== -->
+
+                <section class="info-section">
+
+
+                    <div class="section-kicker">
+                        المميزات
+                    </div>
+
+
+                    <h2>
+                        لماذا تستخدم أداة ضغط الصور؟
+                    </h2>
+
+
+                    <div class="benefits-grid">
+
+
+                        <article class="benefit-card">
+
+                            <div class="benefit-icon">
+                                ⚡
+                            </div>
+
+                            <h3>
+                                سرعة أكبر
+                            </h3>
+
+                            <p>
+                                الصور ذات الحجم الأصغر
+                                تكون أسهل وأسرع في الرفع
+                                والمشاركة.
+                            </p>
+
+                        </article>
+
+
+
+                        <article class="benefit-card">
+
+                            <div class="benefit-icon">
+                                💾
+                            </div>
+
+                            <h3>
+                                توفير مساحة
+                            </h3>
+
+                            <p>
+                                تقليل حجم الصور يساعدك
+                                على توفير مساحة التخزين.
+                            </p>
+
+                        </article>
+
+
+
+                        <article class="benefit-card">
+
+                            <div class="benefit-icon">
+                                🔒
+                            </div>
+
+                            <h3>
+                                خصوصية أفضل
+                            </h3>
+
+                            <p>
+                                تتم معالجة الصورة مباشرة
+                                داخل المتصفح.
+                            </p>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     How To Use
+                ================================== -->
+
+                <section class="info-section">
+
+
+                    <div class="section-kicker">
+                        طريقة الاستخدام
+                    </div>
+
+
+                    <h2>
+                        كيف تضغط صورة؟
+                    </h2>
+
+
+                    <div class="steps-list">
+
+
+                        <article class="step-item">
+
+                            <span class="step-number">
+                                1
+                            </span>
+
+
+                            <div>
+
+                                <h3>
+                                    اختر الصورة
+                                </h3>
+
+                                <p>
+                                    اختر صورة JPG أو PNG
+                                    أو WebP من جهازك.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <article class="step-item">
+
+                            <span class="step-number">
+                                2
+                            </span>
+
+
+                            <div>
+
+                                <h3>
+                                    حدد الإعدادات
+                                </h3>
+
+                                <p>
+                                    اختر جودة الصورة
+                                    والصيغة المناسبة.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <article class="step-item">
+
+                            <span class="step-number">
+                                3
+                            </span>
+
+
+                            <div>
+
+                                <h3>
+                                    اضغط الصورة
+                                </h3>
+
+                                <p>
+                                    اضغط على زر ضغط الصورة
+                                    وانتظر انتهاء العملية.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <article class="step-item">
+
+                            <span class="step-number">
+                                4
+                            </span>
+
+
+                            <div>
+
+                                <h3>
+                                    حمّل النتيجة
+                                </h3>
+
+                                <p>
+                                    شاهد النتيجة ثم حمّل
+                                    الصورة المضغوطة.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     FAQ
+                ================================== -->
+
+                <section class="info-section faq-section">
+
+
+                    <div class="section-kicker">
+                        الأسئلة الشائعة
+                    </div>
+
+
+                    <h2>
+                        أسئلة حول ضغط الصور
+                    </h2>
+
+
+                    <div class="faq-list">
+
+
+                        <details>
+
+                            <summary>
+                                ما صيغ الصور التي تدعمها الأداة؟
+                            </summary>
+
+
+                            <p>
+                                تدعم الأداة حاليًا JPG وPNG
+                                وWebP.
+                            </p>
+
+                        </details>
+
+
+
+                        <details>
+
+                            <summary>
+                                هل يتم رفع صوري إلى الإنترنت؟
+                            </summary>
+
+
+                            <p>
+                                لا. في هذه النسخة تتم معالجة
+                                الصورة داخل المتصفح مباشرة.
+                            </p>
+
+                        </details>
+
+
+
+                        <details>
+
+                            <summary>
+                                هل يمكنني التحكم في جودة الصورة؟
+                            </summary>
+
+
+                            <p>
+                                نعم. يمكنك استخدام شريط الجودة
+                                لتحديد المستوى المناسب قبل
+                                الضغط.
+                            </p>
+
+                        </details>
+
+
+
+                        <details>
+
+                            <summary>
+                                هل يمكن أن تصبح الصورة أكبر
+                                بعد الضغط؟
+                            </summary>
+
+
+                            <p>
+                                نعم، قد يحدث ذلك في بعض الحالات،
+                                خصوصًا عندما تكون الصورة الأصلية
+                                مضغوطة بالفعل. لذلك يجب مقارنة
+                                الحجم الأصلي بالحجم الناتج.
+                            </p>
+
+                        </details>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================
+         Footer
+    ================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+
+            <div class="footer-content">
+
+
+                <!-- Footer Brand -->
+
+                <div class="footer-brand-section">
+
+                    <div class="footer-brand">
+                        Renzo Tools
+                    </div>
+
+
+                    <p>
+                        كل أدوات الإنترنت التي تحتاجها
+                        في مكان واحد.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Footer Links -->
+
+                <div class="footer-links">
+
+
+                    <h3>
+                        روابط سريعة
+                    </h3>
+
+
+                    <a href="../../index.html">
+                        الرئيسية
+                    </a>
+
+
+                    <a href="../../index.html#tools">
+                        الأدوات
+                    </a>
+
+
+                    <a href="../../index.html#about">
+                        من نحن
+                    </a>
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <!-- Footer Bottom -->
+
+            <div class="footer-bottom">
+
+                © 2026 Renzo Tools —
+                جميع الحقوق محفوظة.
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =================================
+         JavaScript
+    ================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
